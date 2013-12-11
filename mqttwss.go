@@ -58,7 +58,7 @@ func wshandler(ws *websocket.Conn) {
 	go func() {
 		for {
 			msg, err := mqtt.DecodeOneMessage(bmqcon, nil)
-			fmt.Println("brok->", msg)
+//			fmt.Println("brok->", msg)
 			if err != nil {
 				mqcon.Close()
 				return
@@ -72,7 +72,7 @@ func wshandler(ws *websocket.Conn) {
 	}()
 	for {
 		msg, err := mqtt.DecodeOneMessage(bws, nil)
-		fmt.Println("webs->", msg)
+//		fmt.Println("webs->", msg)
 		if err != nil {
 			ws.Close()
 			return
